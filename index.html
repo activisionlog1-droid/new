@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belaté Events</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Patrick+Hand&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Link to external CSS -->
+<link rel="stylesheet" href="foo.css">
+</head>
+
+<body>
+
+<!-- HEADER LOGO -->
+<header>
+  <img src="momsimg.jpeg" height="400"/>
+</header>
+
+<!-- HERO -->
+<section class="hero container fade">
+  <h1>Smart, Stylish, Seamless Events That Deliver.</h1>
+  <button onclick="scrollToForm()">Book Your Event</button>
+</section>
+
+<!-- ABOUT & SERVICES GRID -->
+<section class="container grid fade">
+  <div>
+    <h3>About Us</h3>
+    <p>We specialize in creating unforgettable events with meticulous planning and exceptional catering services.</p>
+    <p>From corporate events to weddings and parties, we tailor our services to meet your unique needs.</p>
+
+    <h3>Services</h3>
+    <ul>
+      <li>Event Planning (Concept to Execution)</li>
+      <li>Catering Services (Customized Menus)</li>
+      <li>Venue Selection & Management</li>
+      <li>Vendor Coordination</li>
+      <li>Event Design & Decoration</li>
+    </ul>
+
+    <h3>Expertise</h3>
+    <ul>
+      <li>Corporate Events</li>
+      <li>Weddings</li>
+      <li>Parties & Anniversaries</li>
+      <li>Conferences & Seminars</li>
+      <li>Celebration of Life</li>
+    </ul>
+  </div>
+
+  <div class="logo-box fade">
+    <img src="momsimg.jpeg" height="300"/>
+  </div>
+</section>
+
+<!-- PARTNERS SPOTLIGHT -->
+<section class="partners fade">
+  <div class="container">
+    <h3>Our Premium Partners</h3>
+    <p>
+      Check out the crème de la crème of our partners! 👉🏽👉🏽👉🏽 Let's shine a spotlight on the amazing brands that make Belaté Events unforgettable 💫🔥
+    </p>
+    <p>
+      At Belaté Events, quality matters! We handpick and partner with premium and trusted brands to ensure your special day is nothing short of perfection 💯💕🎉
+    </p>
+
+    <div class="partners-logos">
+      <div class="partner-img fade">The Food Embasy</div>
+      <div class="partner-img fade">Whykay Events</div>
+      <div class="partner-img fade">Fruitie World</div>
+      <div class="partner-img fade">TFT FoodBox</div>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD / WHY CHOOSE US / FORM -->
+<section class="gold fade" id="contact">
+  <div class="container">
+    <div>
+      <h3>Why Choose Us?</h3>
+      <ul>
+        <li>Personalized Service</li>
+        <li>Attention to Detail</li>
+        <li>Creative Solutions</li>
+        <li>Stress-Free Execution</li>
+      </ul>
+
+      <div class="contact">
+        <p>📧 Kojasminе75@gmail.com</p>
+        <p>📞 0802 382 7597</p>
+        <p>📸 @belate_events</p>
+      </div>
+
+      <h3>Book an Event</h3>
+      <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="text" placeholder="Event Type (Wedding, Corporate…)" required>
+        <input type="date" required>
+        <textarea rows="4" placeholder="Tell us about your event"></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+
+      <p id="success">✅ Your request has been sent. Kindly message us on WHATSAPP.</p>
+    </div>
+
+    <div class="photo fade"><!-- leave empty for your image --></div>
+  </div>
+</section>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/2348023827597?text=Hello%20Belaté%20Events,%20I%20want%20to%20plan%20an%20event." target="_blank">💬</a>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("show")
+  })
+},{threshold:0.2})
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el))
+
+function scrollToForm(){
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"})
+}
+
+function submitForm(e){
+  e.preventDefault()
+  document.getElementById("success").style.display="block"
+}
+</script>
+
+</body>
+</html>
